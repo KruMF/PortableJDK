@@ -1,6 +1,14 @@
 # JDK portable
 
-A portable **JDK runner** with batches for compiling and running java files.
+## Abstract
+
+This is a portable **JDK runner** with batches for compiling and running java files.
+
+Intended for situations, where you want to **use java, but don't have the admin rights to install it**.
+
+## Install
+
+Run `tools\getjdk.bat` and watch magic happen.
 
 ## Use
 

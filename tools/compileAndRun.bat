@@ -1,9 +1,9 @@
 REM compileAndRun.bat [source path] [source file name]
 
-set rootdir=..
-set toolsdir=tools
-set sourcedir=%1
-set sourceName=%2
+@set rootdir=..
+@set toolsdir=tools
+@set sourcedir=%1
+@set sourceName=%2
 call :compile
 call :run
 goto :eof

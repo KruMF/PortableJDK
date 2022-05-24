@@ -9,10 +9,7 @@ call :run
 goto :eof
 
 :compile
-echo Compiling...
 call %rootdir%\%toolsdir%\compile.bat %sourcedir% %sourceName%
-echo.
-echo Done.
 goto :eof
 
 :run

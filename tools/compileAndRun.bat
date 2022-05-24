@@ -13,10 +13,5 @@ call %rootdir%\%toolsdir%\compile.bat %sourcedir% %sourceName%
 goto :eof
 
 :run
-echo.
-echo Running...
-echo.
 call %rootdir%\%toolsdir%\run.bat %sourcedir% %sourceName%
-echo.
-pause
 goto :eof

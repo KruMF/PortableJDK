@@ -5,6 +5,7 @@ set toolsdir=tools
 set sourcedir=%1
 set sourceName=%2
 call :compile
+call :run
 goto :eof
 
 :compile

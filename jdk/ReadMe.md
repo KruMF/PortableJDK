@@ -1,1 +1,1 @@
-Add a folder of jdk here and add it to gitignore.
+Add a folder of JDK here and add it to gitignore.

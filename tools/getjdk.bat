@@ -14,7 +14,7 @@ set driveLetter=%~d0
 set currentPath=%~p0
 set fullCurrentPath=%driveLetter%%currentPath%
 set rootDir=..
-set utilDir=%fullCurrentPath%\util
+set utilDir=%fullCurrentPath%util
 
 set title_base=Getter
 call :changeStatus 0
@@ -24,9 +24,9 @@ goto :eof
 @REM Initializes configuration.
 @REM call :setConfig
 :setConfig
-set jdkVersion=jdk-18.0.1.1
+set jdkZip=jdk-zip
 set jdkDir=%fullCurrentPath%%rootDir%\jdk
-set mavenVersion=apache-maven-3.8.5
+set mavenZip=apache-maven-zip
 set mavenDir=%fullCurrentPath%%rootDir%\maven
 goto :eof
 
@@ -47,7 +47,7 @@ goto :eof
 @REM call :downloadJDK
 :downloadJDK
 set url=https://download.oracle.com/java/18/latest/jdk-18_windows-x64_bin.zip
-call :prepareDownload %url% "%jdkDir%" %jdkVersion% "Downloading JDK"
+call :prepareDownload %url% "%jdkDir%" %jdkZip% "Downloading JDK"
 goto :eof
 
 
@@ -55,7 +55,7 @@ goto :eof
 @REM call :downloadMaven
 :downloadMaven
 set url=https://dlcdn.apache.org/maven/maven-3/3.8.5/binaries/apache-maven-3.8.5-bin.zip
-call :prepareDownload %url% "%mavenDir%" %mavenVersion% "Downloading Maven"
+call :prepareDownload %url% "%mavenDir%" %mavenZip% "Downloading Maven"
 goto :eof
 
 
@@ -96,7 +96,7 @@ goto :eof
 @REM call :extractJDK
 :extractJDK
 set status=Extracting JDK
-call :commonExtraction "%jdkDir%" %jdkVersion% "%status%"
+call :commonExtraction "%jdkDir%" %jdkZip% "%status%"
 goto :eof
 
 
@@ -104,7 +104,7 @@ goto :eof
 @REM call :extractMaven
 :extractMaven
 set status=Extracting Maven
-call :commonExtraction "%mavenDir%" %mavenVersion% "%status%"
+call :commonExtraction "%mavenDir%" %mavenZip% "%status%"
 goto :eof
 
 

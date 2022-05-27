@@ -1,1 +1,2 @@
-/jdk-18
+!.gitignore
+*

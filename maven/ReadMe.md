@@ -1,1 +1,0 @@
-Add a folder of Maven here and add it to gitignore.

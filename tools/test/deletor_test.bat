@@ -1,15 +1,18 @@
 @REM This script tests "deletor.bat" script.
 :init
 @echo off
-set scriptDirectory=..\util
+set rootDirectory=..\..
+set testableScriptDirectory=%rootDirectory%\util
 set scriptName=deletor.bat
-set folderDirectory=..\..\jdk
-set folderName=testfold
+
+REM relative to the testable script
+set folderDirectory=test
+set folderName=deletable
 goto start
 
 
 :start
-cd "%scriptDirectory%"
+cd "%testableScriptDirectory%"
 set folderPath=%folderDirectory%\%folderName%
 call %scriptName% "%folderPath%"
 exit

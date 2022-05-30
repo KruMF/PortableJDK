@@ -20,9 +20,9 @@ goto :eof
 setlocal enabledelayedexpansion
 rmdir %folderPath% || REM 
 endlocal & set %~1=%ERRORLEVEL%
-@REM 0		- ok
-@REM 2		- not found
-@REM 145	- not empty
+@REM 0   - ok
+@REM 2   - not found
+@REM 145 - not empty
 goto :eof
 
 

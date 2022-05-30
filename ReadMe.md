@@ -7,9 +7,9 @@ This is a portable **JDK runner** with batches for compiling and running java fi
 Intended for situations, where you want to **use java, but don't have the admin rights to install it**.
 
 
-## Install
+## Setup
 
-Run `tools\getjdk.bat` and watch magic happen.
+Run `tools\setup.bat` and watch magic happen.
 
 
 ## Use
@@ -21,7 +21,5 @@ Call from `tools`:
 
 
 ## Notes
-
-Add a preferred JDK to folder `jdk` (see `jdk\ReadMe.md` for more info).
 
 Check `sample` for an example.

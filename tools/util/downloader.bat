@@ -13,9 +13,10 @@ goto :eof
 @REM Path accepts spaces.
 @REM Display name accepts spaces.
 :download
+set bitsadminPath=%WINDIR%\SYSTEM32\bitsadmin.exe
 REM set priority=LOW
 set priority=NORMAL
 REM set priority=HIGH
 REM set priority=FOREGROUND
-bitsadmin /transfer %3 /download /priority %priority% %1 "%~2"
+%bitsadminPath% /transfer %3 /download /priority %priority% %1 "%~2"
 goto :eof

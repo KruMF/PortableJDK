@@ -1,31 +1,23 @@
-@REM call extractor.bat [targetDir] [zipName]
-@REM Parameter "targetDir" accepts spaces.
-@REM TODO: cd to relevant dir before calling this batch (somewhere in the main batch) in order to check the version
+@REM call extractor.bat [target directory] [zipName]
+@REM Parameter "target directory" accepts spaces.
 :start
 set targetDir=%1
 set zipName=%2
 set extension=.zip
-call :dirOps %targetDir% %zipName%
-call :extract
+set zipPath=%targetDir%\%zipName%%extension%
+call :zipExtract
 call :zipRemoval
 goto :eof
 
 
-@REM call :dirOps [targetDir] [zipName]
-:dirOps
-cd %targetDir%
-REM rmdir %zipName%
-REM mkdir %zipName%
+@REM call :zipExtract
+:zipExtract
+set tarPath=%WINDIR%\SYSTEM32\tar.exe
+%tarPath% -xvf %zipPath% -m -C %targetDir%
 goto :eof
 
 
-@REM call :extract
-:extract
-tar -xvf %zipName%%extension%
-goto :eof
-
-
-@REM call :tempRemoval
+@REM call :zipRemoval
 :zipRemoval
-del %zipName%%extension%
+del %zipPath%
 goto :eof

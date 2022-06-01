@@ -1,5 +1,5 @@
-@REM call main.bat [full root path]
-@REM Root path accepts spaces.
+@REM call main.bat
+@REM No arguments needed nor supported.
 :init
 set fullRootPathQuoted=
 call setupPathGetter.bat fullRootPathQuoted

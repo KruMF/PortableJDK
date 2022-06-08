@@ -1,9 +1,12 @@
-@REM call jdkActions.bat [utilDir]
-set utilDir=%1
-REM call :downloadJDK %utilDir%
-REM call :extractJDK %utilDir%
-REM get the version of jdk
-REM save jdk version number in config
+@REM call jdkActions.bat [full root path]
+set fullRootPath=%~1
+set utilDir=%fullRootPath%\tools\util
+set jdkDir=%fullRootPath%\jdk
+set jdkZip=jdk-zip
+call :downloadJDK "%utilDir%"
+call :extractJDK "%utilDir%"
+REM todo: get the version of jdk
+REM todo: save jdk version number in config
 goto :eof
 
 
@@ -18,5 +21,5 @@ goto :eof
 @REM Extracts the JDK from an archive.
 @REM call :extractJDK [utilDir]
 :extractJDK
-call commonExtraction.bat %1 "%jdkDir%" %jdkZip% "Extracting JDK"
+call commonExtraction.bat "%~1" "%jdkDir%" %jdkZip% "Extracting JDK"
 goto :eof

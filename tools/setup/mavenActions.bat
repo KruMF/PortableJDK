@@ -1,9 +1,12 @@
-@REM call mavenActions.bat [utilDir]
-set utilDir=%1
-call :downloadMaven %utilDir%
-call :extractMaven %utilDir%
-REM get the version of maven
-REM save maven version number in config
+@REM call mavenActions.bat [full root path]
+set fullRootPath=%~1
+set utilDir=%fullRootPath%\tools\util
+set mavenDir=%fullRootPath%\maven
+set mavenZip=apache-maven-zip
+call :downloadMaven "%utilDir%"
+call :extractMaven "%utilDir%"
+REM todo: get the version of maven
+REM todo: save maven version number in config
 goto :eof
 
 
@@ -18,5 +21,5 @@ goto :eof
 @REM Extracts the Maven from an archive.
 @REM call :extractMaven [utilDir]
 :extractMaven
-call commonExtraction.bat %1 "%mavenDir%" %mavenZip% "Extracting Maven"
+call commonExtraction.bat "%~1" "%mavenDir%" %mavenZip% "Extracting Maven"
 goto :eof

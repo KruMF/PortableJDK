@@ -4,14 +4,14 @@
 @REM Parameter "zip name" doesn't accept spaces.
 @REM Parameter "title status" accepts spaces.
 :init
-set utilDir=%1
-set targetDir=%2
+set utilDir=%~1
+set targetDir=%~2
 set zipName=%3
-set titleStatus=%4
+set titleStatus=%~4
 goto start
 
 :start
-call setupTitleChanger.bat %utilDir% %titleStatus%
-call %utilDir%\extractor.bat %targetDir% %zipName%
-call setupTitleChanger.bat %utilDir% 0
+call setupTitleChanger.bat "%utilDir%" "%titleStatus%"
+call "%utilDir%"\extractor.bat "%targetDir%" %zipName%
+call setupTitleChanger.bat "%utilDir%" 0
 goto :eof

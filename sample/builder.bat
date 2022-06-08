@@ -1,3 +1,5 @@
 @echo off
-cls
-call ..\tools\compileAndRun.bat sample Sample
+set projectName=sample
+set mainClassName=Sample
+call ..\tools\compileAndRun.bat "%projectName%" "%mainClassName%"
+exit

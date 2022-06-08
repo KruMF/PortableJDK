@@ -1,18 +1,18 @@
-REM compileAndRun.bat [source path] [source file name]
+@REM call compileAndRun.bat [source path] [source file name]
 
-set rootdir=..
-set toolsdir=tools
-set sourcedir=%1
-set sourceName=%2
+@set rootDir=..
+@set toolsDir=tools
+@set sourceDir=%~1
+@set sourceName=%~2
+call :compile
+cls
+call :run
+goto :eof
 
-echo Compiling...
-call %rootdir%\%toolsdir%\compile.bat %1 %2
-echo.
-echo Done.
+:compile
+call %rootDir%\%toolsDir%\compile.bat "%sourceDir%" "%sourceName%"
+goto :eof
 
-echo.
-echo Running...
-echo.
-call %rootdir%\%toolsdir%\run.bat %1 %2
-echo.
-pause
+:run
+call %rootDir%\%toolsDir%\run.bat "%sourceDir%" "%sourceName%"
+goto :eof

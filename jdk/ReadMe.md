@@ -1,1 +1,0 @@
-Add a folder of jdk here and add it to gitignore.
